@@ -48,6 +48,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set(mode, lhs, rhs, opts)
     end
     bufmap('n', 'K', vim.lsp.buf.hover)
+    bufmap('n', 'gf', vim.lsp.buf.code_action)
     bufmap('n', 'gd', vim.lsp.buf.definition)
     bufmap('n', 'gD', vim.lsp.buf.declaration)
     bufmap('n', '[d', vim.diagnostic.goto_prev)
