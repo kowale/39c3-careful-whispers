@@ -49,10 +49,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
     bufmap('n', 'K', vim.lsp.buf.hover)
     bufmap('n', 'gf', vim.lsp.buf.code_action)
+    bufmap('x', 'gf', vim.lsp.buf.code_action)
     bufmap('n', 'gd', vim.lsp.buf.definition)
     bufmap('n', 'gD', vim.lsp.buf.declaration)
     bufmap('n', '[d', vim.diagnostic.goto_prev)
     bufmap('n', ']d', vim.diagnostic.goto_next)
   end
 })
+
+-- Other settings to make it more like vscode lol
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.title = true
+vim.o.updatetime = 300
+vim.cmd [[set clipboard+=unnamedplus]]
+vim.opt.undofile = true
+vim.opt.completeopt = {'menu', 'menuone', 'noinsert', 'noselect'}
 
